@@ -22,8 +22,9 @@ router.post("/favoris", async (req, res) => {
 router.get("/favoris", async (req, res) => {
   const favoris = await Favoris.find();
   const name = favoris.map((fav) => fav.name);
-
-  res.json(name);
+  const token = favoris.map((fav) => fav.token);
+  const affich = name + token;
+  res.json(affich);
 });
 router.get("/favoris/id", async (req, res) => {
   const favoris = await Favoris.find();
