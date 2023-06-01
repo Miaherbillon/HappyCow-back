@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 
 const User = mongoose.model("Favoris", {
   name: String,
-  id: String,
+  token: String,
+  info: Object,
 });
 
 module.exports = User;
